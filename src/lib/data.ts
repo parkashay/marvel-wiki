@@ -1,0 +1,28 @@
+import { ChartCharacters } from "@/types/types";
+
+export const appearances: ChartCharacters = [
+  ["Hulk", 10],
+  ["Captain America", 20],
+  ["Iron Man", 30],
+  ["Thor", 40],
+  ["Hawkeye", 10],
+  ["Black Panther", 30],
+  ["Black Widow", 10],
+  ["Doctor Strange", 40],
+  ["Captain Marvel", 5],
+  ["Scarlet Witch", 10],
+  ["Falcon", 6],
+  ["Winter Soldier", 12],
+  ["Spider-Man", 50],
+  ["Ant-Man", 14],
+  ["Rocket Raccoon", 7],
+  ["Groot", 7],
+  ["Nebula", 3],
+  ["Gamora", 6],
+  ["Mantis", 1],
+  ["Cyclops", 15],
+  ["Colossus", 19],
+  ["Phoenix", 4],
+  ["Vision", 8],
+  ["War Machine", 6],
+];
