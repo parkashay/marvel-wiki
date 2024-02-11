@@ -3,7 +3,7 @@ import { CharacterDetails } from "@/types/types";
 
 function CharacterDetails(character: CharacterDetails) {
   return (
-    <div className="bg-primary/30 backdrop-blur-sm py-6 px-3 rounded-lg">
+    <div className="container mt-24 bg-primary/30 backdrop-blur-sm py-6 px-3 rounded-lg">
       <div className="grid grid-cols-1 md:grid-cols-2 place-items-center">
         <div className="h-full w-full md:p-6 flex flex-col items-center">
           <img

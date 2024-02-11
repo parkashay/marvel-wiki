@@ -1,16 +1,22 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 
 function Layout() {
   return (
-    <main className="container">
+    <main>
       <Navbar />
       <div className="fixed left-0 top-0 h-screen w-screen -z-10">
-        <img src="/marvel.jpg" alt="bg" className="h-full w-full object-cover" />
+        <img
+          src="/marvel.jpg"
+          alt="bg"
+          className="h-full w-full object-cover"
+        />
       </div>
-      <section className="img-bg my-24">
+      <section className="mb-12">
         <Outlet />
       </section>
+      <Footer />
     </main>
   );
 }

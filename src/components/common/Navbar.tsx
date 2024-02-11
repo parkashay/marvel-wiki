@@ -34,10 +34,10 @@ const Navbar = () => {
     <nav
       className={cn(
         "w-full pt-3 fixed top-0 left-0 z-50 transition-transform duration-500 flex items-center justify-center gap-6",
-        hideNavbar ? "-translate-y-[100%]" : "translate-y-0"
+        hideNavbar ? "-translate-y-[100%]" : "translate-y-0", "text-condensed"
       )}
     >
-      <div className="flex items-center justify-center gap-6 bg-primary backdrop-blur-sm px-4 py-2 rounded-full font-semibold">
+      <div className="flex items-center justify-center gap-6 bg-primary backdrop-blur-sm px-4 py-2 rounded-full">
         {NAV_LINKS.map((link) => (
           <NavLink
             key={link.title}

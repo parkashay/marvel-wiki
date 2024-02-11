@@ -1,7 +1,7 @@
 import Chart, { GoogleChartOptions } from "react-google-charts";
 
-function PieChart({ dataa }: { dataa: [string, number][] }) {
-  const data = [["Character", "Appearances"], ...dataa];
+function PieChart({ characters }: { characters: [string, number][] }) {
+  const data = [["Character", "Appearances"], ...characters];
   const options: GoogleChartOptions = {
     is3D: true,
     backgroundColor: "transparent",
@@ -15,8 +15,8 @@ function PieChart({ dataa }: { dataa: [string, number][] }) {
       chartType="PieChart"
       data={data}
       options={options}
-      height={"100%"}
-      width={"100%"}
+      width="100%"
+      height="700px"
     />
   );
 }

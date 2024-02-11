@@ -55,7 +55,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="container">
       {currentPage == 0 ? (
         <div className="flex items-center justify-center py-4">
           <Input
@@ -80,16 +80,16 @@ export function DataTable<TData, TValue>({
           </Button>
         </div>
       )}
-      <div className="rounded-md">
+      <div className="rounded-lg overflow-hidden">
         <Table className="bg-primary/40 backdrop-blur">
-          <TableHeader className="bg-red-700">
+          <TableHeader className="bg-primary/70">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="font-semibold text-xl text-white"
+                      className="font-semibold text-white"
                     >
                       {header.isPlaceholder
                         ? null
@@ -122,7 +122,7 @@ export function DataTable<TData, TValue>({
                             (cell.getValue() as Thumbnail).extension
                           }
                           alt="img"
-                          className="rounded-full object-cover h-24 w-24"
+                          className="rounded-full object-cover h-16 w-16"
                         />
                       ) : (
                         <span>
@@ -148,7 +148,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex items-center justify-end space-x-2 py-4 bg-primary/80 px-3 rounded-lg">
         <Button
           variant="outline"
           size="sm"
