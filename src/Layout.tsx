@@ -10,7 +10,7 @@ function Layout() {
         <img
           src="/marvel.jpg"
           alt="bg"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-20"
         />
       </div>
       <section className="mb-12">

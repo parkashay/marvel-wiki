@@ -12,6 +12,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -20,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
-import { Search } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import { Thumbnail } from "@/types/types";
 
 interface DataTableProps<TData, TValue> {
@@ -82,14 +83,14 @@ export function DataTable<TData, TValue>({
       )}
       <div className="rounded-lg overflow-hidden">
         <Table className="bg-primary/40 backdrop-blur">
-          <TableHeader className="bg-primary/70">
+          <TableHeader className="bg-text/90">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="font-semibold text-white"
+                      className="font-semibold text-condensed text-primary"
                     >
                       {header.isPlaceholder
                         ? null
@@ -146,33 +147,42 @@ export function DataTable<TData, TValue>({
               </TableRow>
             )}
           </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell
+                align="center"
+                colSpan={3}
+                className="bg-text/60 text-primary"
+              >
+                <div className="flex items-center justify-start md:justify-end">
+                  {" "}
+                  <Button
+                    size="icon"
+                    onClick={() => setCurrentPage((old) => old - 1)}
+                    disabled={!table.getCanPreviousPage()}
+                    className="rounded-full"
+                  >
+                    <ArrowLeft />
+                  </Button>
+                  {
+                    <span className="px-2 py-2">
+                      {" "}
+                      {currentPage + 1} of {table.getPageCount()}{" "}
+                    </span>
+                  }
+                  <Button
+                    size="icon"
+                    onClick={() => setCurrentPage((old) => old + 1)}
+                    disabled={!table.getCanNextPage()}
+                    className="rounded-full"
+                  >
+                    <ArrowRight />
+                  </Button>
+                </div>
+              </TableCell>
+            </TableRow>
+          </TableFooter>
         </Table>
-      </div>
-      <div className="flex items-center justify-end space-x-2 py-4 bg-primary/80 px-3 rounded-lg">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setCurrentPage((old) => old - 1)}
-          disabled={!table.getCanPreviousPage()}
-          className="font-bold hover:bg-primary/50"
-          >
-          &larr; prev
-        </Button>
-          {
-            <span className="bg-primary/50 backdrop-blur-sm rounded px-2 py-2">
-              {" "}
-              {currentPage + 1} of {table.getPageCount()}{" "}
-            </span>
-          }
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setCurrentPage((old) => old + 1)}
-          disabled={!table.getCanNextPage()}
-          className="font-semibold"
-        >
-          Next &rarr;
-        </Button>
       </div>
     </div>
   );
